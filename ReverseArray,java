@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+public class ReverseArray{
+
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        System.out.println("Original array: " + Arrays.toString(arr));
+
+        reverseArray(arr);
+
+        System.out.println("Reversed array: " + Arrays.toString(arr));
+    }
+
+    public static void reverseArray(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n / 2; i++) {
+            // Swap elements at i and (n - 1 - i)
+            int temp = array[i];
+            array[i] = array[n - 1 - i];
+            array[n - 1 - i] = temp;
+        }
+    }
+}
